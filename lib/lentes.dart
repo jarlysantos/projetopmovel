@@ -53,7 +53,7 @@ class _LentesState extends State<Lentes> {
                   child: Column(
                     children: [
                       Image.network("https://acdn-us.mitiendanube.com/stores/001/118/587/products/c3511773-3978-46c0-8dcf-1ddf29d738e641-8e6d88a2ae8804719715900976899620-1024-1024.jpg", width: 250,),
-                      Text("Par de lente anti-blue + antirreflexo - com grau")
+                      Text("Par de lente anti-blue + antirreflexo - Com grau")
                     ],
                   ),
                 ),// Imagem e legenda
