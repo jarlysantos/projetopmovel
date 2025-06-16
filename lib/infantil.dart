@@ -16,7 +16,7 @@ class _infantilState extends State<infantil> {
         appBar: AppBar(
           centerTitle: true,
           title: Text('ÓCULOS INFATIL',
-          style: TextStyle(
+           style: TextStyle(
             fontWeight: FontWeight.w900,
 
           ),
@@ -31,10 +31,10 @@ class _infantilState extends State<infantil> {
     return Padding(
       padding: EdgeInsets.all(16),
       child: ListView(
+         children: [
           Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
 
                 ClipRRect(
                   child: Image.network(
