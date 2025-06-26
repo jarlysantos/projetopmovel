@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class acessorios extends StatefulWidget {
-  const acessorios({super.key});
+class Acessorios extends StatefulWidget {
+  const Acessorios({super.key});
 
   @override
-  State<acessorios> createState() => _acessoriosState();
+  State<Acessorios> createState() => _AcessoriosState();
 }
 
-class _acessoriosState extends State<acessorios> {
+class _AcessoriosState extends State<Acessorios> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -200,7 +200,7 @@ class _acessoriosState extends State<acessorios> {
     );
   }
 
-  buidlAppBar() {
+  buildAppBar() {
 
   }
 }
