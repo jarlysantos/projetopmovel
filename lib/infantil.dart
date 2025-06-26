@@ -1,166 +1,106 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class infantil extends StatefulWidget {
-  const infantil({super.key});
+class Infantil extends StatefulWidget {
+  const Infantil({super.key});
 
   @override
-  State<infantil> createState() => _infantilState();
+  State<Infantil> createState() => _InfantilState();
 }
 
-class _infantilState extends State<infantil> {
+class _InfantilState extends State<Infantil> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('ÓCULOS INFATIL',
-           style: TextStyle(
-            fontWeight: FontWeight.w900,
-
+          title: const Text(
+            'ÓCULOS INFANTIL',
+            style: TextStyle(
+              fontWeight: FontWeight.w900,
+            ),
           ),
-        ),
+          backgroundColor: const Color(0xFFC58C6D),
         ),
         body: buildBody(),
       ),
     );
   }
 
-  buildBody(){
+  Widget buildBody() {
     return Padding(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       child: ListView(
-         children: [
-          Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-
-                ClipRRect(
-                  child: Image.network(
-                    'https://i.pinimg.com/736x/33/3a/15/333a15fecadc047609e0e33c9a7d8edc.jpg',
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16),
-                  ),
-                ),
-                //IMAGEM
-
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text("Gatinho", style: TextStyle(fontSize: 18, color: Colors.black,fontWeight: FontWeight.bold)),
-                    Text("Rosa Claro", style: TextStyle(fontSize: 17)),
-                    Text("RS300" , style: TextStyle(fontSize: 17),),
-                  ],
-                )
-
-              ],
-            ),
+        children: [
+          buildItem(
+            imageUrl: 'https://i.pinimg.com/736x/33/3a/15/333a15fecadc047609e0e33c9a7d8edc.jpg',
+            modelo: 'Gatinho',
+            cor: 'Rosa Claro',
+            preco: 'RS 300',
           ),
-          SizedBox(
-            height: 20,
+          const SizedBox(height: 20),
+          buildItem(
+            imageUrl: 'https://i.pinimg.com/736x/1a/f2/d6/1af2d6c2825354f6770ba249ba2bcdcb.jpg',
+            modelo: 'Arco-íris',
+            cor: 'Rosa Claro',
+            preco: 'RS 350',
           ),
-          Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-
-                ClipRRect(
-                  child: Image.network(
-                    'https://i.pinimg.com/736x/1a/f2/d6/1af2d6c2825354f6770ba249ba2bcdcb.jpg',
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16),
-                  ),
-                ),
-                //IMAGEM
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text("Arco-íris", style: TextStyle(fontSize: 18, color: Colors.black,fontWeight: FontWeight.bold)),
-                    Text("Rosa claro", style: TextStyle(fontSize: 17)),
-                    Text("RS : 350", style: TextStyle(fontSize: 17))
-                  ],
-                )
-
-              ],
-            ),
+          const SizedBox(height: 20),
+          buildItem(
+            imageUrl: 'https://i.pinimg.com/736x/78/7e/7a/787e7a2b8dd5219ab507dc141145b5b7.jpg',
+            modelo: 'Florzinha',
+            cor: 'Marrom Claro',
+            preco: 'RS 295',
           ),
-          SizedBox(
-            height: 20,
+          const SizedBox(height: 20),
+          buildItem(
+            imageUrl: 'https://i.pinimg.com/736x/8d/91/ab/8d91ab939d607e226464272225d71a82.jpg',
+            modelo: 'Laço',
+            cor: 'Rosa Claro',
+            preco: 'RS 400',
           ),
-          Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-
-                ClipRRect(
-                  child: Image.network(
-                    'https://i.pinimg.com/736x/78/7e/7a/787e7a2b8dd5219ab507dc141145b5b7.jpg',
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16),
-                  ),
-                ),
-                //IMAGEM
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text("Florzinha", style: TextStyle(fontSize: 18, color: Colors.black,fontWeight: FontWeight.bold)),
-                    Text("Marron Claro", style: TextStyle(fontSize: 17)),
-                    Text("RS295",style: TextStyle(fontSize: 17))
-                  ],
-                )
-
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-
-                ClipRRect(
-                  child: Image.network(
-                    'https://i.pinimg.com/736x/8d/91/ab/8d91ab939d607e226464272225d71a82.jpg',
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16),
-                  ),
-                ),
-                //IMAGEM
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text("Laço", style: TextStyle(fontSize: 18, color: Colors.black,fontWeight: FontWeight.bold)),
-                    Text("Rosa claro", style: TextStyle(fontSize: 17)),
-                    Text("RS400",style: TextStyle(fontSize: 17))
-                  ],
-                )
-
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-
+          const SizedBox(height: 20),
         ],
       ),
     );
   }
 
-  buidlAppBar() {
-
+  Widget buildItem({
+    required String imageUrl,
+    required String modelo,
+    required String cor,
+    required String preco,
+  }) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.network(imageUrl),
+        ),
+        const SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              modelo,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              cor,
+              style: const TextStyle(fontSize: 17),
+            ),
+            Text(
+              preco,
+              style: const TextStyle(fontSize: 17),
+            ),
+          ],
+        ),
+      ],
+    );
   }
-
 }
-
-
