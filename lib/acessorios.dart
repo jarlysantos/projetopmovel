@@ -200,8 +200,8 @@ class _AcessoriosState extends State<Acessorios> {
     );
   }
 
-  buildAppBar() {
+ 
 
   }
-}
+
 
