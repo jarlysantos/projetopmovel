@@ -13,7 +13,6 @@ class _ProjetooticaState extends State<Projetootica> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: buidlAppBar(),
         body: buildBody(),
       ),
     );
@@ -156,9 +155,7 @@ class _ProjetooticaState extends State<Projetootica> {
     );
   }
   
-  buidlAppBar() {
-
-  }
+ 
 
 }
 
