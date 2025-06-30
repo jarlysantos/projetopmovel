@@ -25,7 +25,6 @@ class _LentesState extends State<Lentes> {
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.black),
             onPressed: () {},
-            // Cor da seta
           ),
         ),
         body: buildBody(),
@@ -38,12 +37,6 @@ class _LentesState extends State<Lentes> {
       padding: EdgeInsets.all(16),
       child: ListView(
         children: [
-          //Column(
-            //crossAxisAlignment: CrossAxisAlignment.center,
-            //children: [
-              //Text("Lentes", style: TextStyle(fontSize: 25, color: Colors.black,)),
-            //],
-          //),
           Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -56,7 +49,7 @@ class _LentesState extends State<Lentes> {
                       Text("Par de lente anti-blue + antirreflexo - ")
                     ],
                   ),
-                ),// Imagem e legenda
+                ),
                 Container(
                   width: 100,
                   child: Column(
@@ -78,7 +71,7 @@ class _LentesState extends State<Lentes> {
 
                     ],
                   ),
-                ) // Preço, avaliação, produto
+                )
               ],
             )
           ),
@@ -97,7 +90,7 @@ class _LentesState extends State<Lentes> {
                         Text("Par de lente - fotossensível + antirreflexo com grau")
                       ],
                     ),
-                  ),// Imagem e legenda
+                  ),
                   Container(
                     width: 100,
                     child: Column(
@@ -119,7 +112,7 @@ class _LentesState extends State<Lentes> {
 
                       ],
                     ),
-                  ) // Preço, avaliação, produto
+                  ) 
                 ],
               )
           ),
@@ -138,7 +131,7 @@ class _LentesState extends State<Lentes> {
                         Text("Par de lentes - fina + solar ")
                       ],
                     ),
-                  ),// Imagem e legenda
+                  ),
                   Container(
                     width: 100,
                     child: Column(
@@ -160,7 +153,7 @@ class _LentesState extends State<Lentes> {
 
                       ],
                     ),
-                  ) // Preço, avaliação, produto
+                  )
                 ],
               )
           ),
@@ -179,7 +172,7 @@ class _LentesState extends State<Lentes> {
                         Text("Par de lentes - Solar- Marrom")
                       ],
                     ),
-                  ),// Imagem e legenda
+                  ),
                   Container(
                     width: 100,
                     child: Column(
@@ -201,7 +194,7 @@ class _LentesState extends State<Lentes> {
 
                       ],
                     ),
-                  ) // Preço, avaliação, produto
+                  )
                 ],
               )
           ),
@@ -220,7 +213,7 @@ class _LentesState extends State<Lentes> {
                         Text("Par de lentes - PREMIUN - com grau")
                       ],
                     ),
-                  ),// Imagem e legenda
+                  ),
                   Container(
                     width: 100,
                     child: Column(
@@ -242,7 +235,7 @@ class _LentesState extends State<Lentes> {
 
                       ],
                     ),
-                  ) // Preço, avaliação, produto
+                  )
                 ],
               )
           ),
