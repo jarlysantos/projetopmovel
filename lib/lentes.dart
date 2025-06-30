@@ -41,7 +41,7 @@ class _LentesState extends State<Lentes> {
                       Text("Par de lente anti-blue + antirreflexo - com grau")
                     ],
                   ),
-                ),// Imagem e legenda
+                ),
                 Container(
                   width: 100,
                   child: Column(
@@ -63,7 +63,7 @@ class _LentesState extends State<Lentes> {
 
                     ],
                   ),
-                ) // Preço, avaliação, produto
+                )
               ],
             )
           ),
@@ -82,7 +82,7 @@ class _LentesState extends State<Lentes> {
                         Text("Par de lente anti-blue + antirreflexo - com grau")
                       ],
                     ),
-                  ),// Imagem e legenda
+                  ),
                   Container(
                     width: 100,
                     child: Column(
@@ -104,7 +104,7 @@ class _LentesState extends State<Lentes> {
 
                       ],
                     ),
-                  ) // Preço, avaliação, produto
+                  ) 
                 ],
               )
           ),
@@ -123,7 +123,7 @@ class _LentesState extends State<Lentes> {
                         Text("Par de lente anti-blue + antirreflexo - com grau")
                       ],
                     ),
-                  ),// Imagem e legenda
+                  ),
                   Container(
                     width: 100,
                     child: Column(
@@ -145,7 +145,7 @@ class _LentesState extends State<Lentes> {
 
                       ],
                     ),
-                  ) // Preço, avaliação, produto
+                  )
                 ],
               )
           ),
@@ -164,7 +164,7 @@ class _LentesState extends State<Lentes> {
                         Text("Par de lente anti-blue + antirreflexo - com grau")
                       ],
                     ),
-                  ),// Imagem e legenda
+                  ),
                   Container(
                     width: 100,
                     child: Column(
@@ -186,7 +186,7 @@ class _LentesState extends State<Lentes> {
 
                       ],
                     ),
-                  ) // Preço, avaliação, produto
+                  ) 
                 ],
               )
           ),
@@ -205,7 +205,7 @@ class _LentesState extends State<Lentes> {
                         Text("Par de lente anti-blue + antirreflexo - com grau")
                       ],
                     ),
-                  ),// Imagem e legenda
+                  ),
                   Container(
                     width: 100,
                     child: Column(
@@ -227,7 +227,7 @@ class _LentesState extends State<Lentes> {
 
                       ],
                     ),
-                  ) // Preço, avaliação, produto
+                  ) 
                 ],
               )
           ),
