@@ -38,12 +38,6 @@ class _AcessoriosState extends State<Acessorios> {
       padding: EdgeInsets.all(16),
       child: ListView(
         children: [
-          //Column(
-          //crossAxisAlignment: CrossAxisAlignment.center,
-          //children: [
-          //Text("Lentes", style: TextStyle(fontSize: 25, color: Colors.black,)),
-          //],
-          //),
           Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -56,7 +50,7 @@ class _AcessoriosState extends State<Acessorios> {
                         Text("Flanela de microfibra")
                       ],
                     ),
-                  ),// Imagem e legenda
+                  ),
                   Container(
                     width: 100,
                     child: Column(
@@ -66,7 +60,7 @@ class _AcessoriosState extends State<Acessorios> {
 
                       ],
                     ),
-                  ) // Preço, avaliação, produto
+                  ),
                 ],
               )
           ),
@@ -85,7 +79,7 @@ class _AcessoriosState extends State<Acessorios> {
                         Text("Spray limpa-lentes")
                       ],
                     ),
-                  ),// Imagem e legenda
+                  ),
                   Container(
                     width: 100,
                     child: Column(
@@ -95,7 +89,7 @@ class _AcessoriosState extends State<Acessorios> {
 
                       ],
                     ),
-                  ) // Preço, avaliação, produto
+                  ) 
                 ],
               )
           ),
@@ -114,7 +108,7 @@ class _AcessoriosState extends State<Acessorios> {
                         Text("Correntes ou cordinhas fashion ")
                       ],
                     ),
-                  ),// Imagem e legenda
+                  ),
                   Container(
                     width: 100,
                     child: Column(
@@ -125,7 +119,7 @@ class _AcessoriosState extends State<Acessorios> {
 
                       ],
                     ),
-                  ) // Preço, avaliação, produto
+                  ),
                 ],
               )
           ),
@@ -144,7 +138,7 @@ class _AcessoriosState extends State<Acessorios> {
                         Text("Correntes ou cordinhas fashion")
                       ],
                     ),
-                  ),// Imagem e legenda
+                  ),
                   Container(
                     width: 100,
                     child: Column(
@@ -155,7 +149,7 @@ class _AcessoriosState extends State<Acessorios> {
 
                       ],
                     ),
-                  ) // Preço, avaliação, produto
+                  ),
                 ],
               )
           ),
@@ -174,7 +168,7 @@ class _AcessoriosState extends State<Acessorios> {
                         Text("Correntes ou cordinhas fashion")
                       ],
                     ),
-                  ),// Imagem e legenda
+                  ),
                   Container(
                     width: 100,
                     child: Column(
@@ -185,7 +179,7 @@ class _AcessoriosState extends State<Acessorios> {
 
                       ],
                     ),
-                  ) // Preço, avaliação, produto
+                  ),
                 ],
               )
           ),
