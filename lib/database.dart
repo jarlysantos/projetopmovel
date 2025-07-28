@@ -34,7 +34,7 @@ class database{
     text: 'Par de lentes - Solar- Marrom',
     valor: 'R\$ 299,60',
     parcelamento: '3x sem juros',
-    avaliacao:  'Icon(Icons.star, size: 18)',
+    avaliacao: 4.0,
     urlImage:
       'https://acdn-us.mitiendanube.com/stores/925/127/products/a4f89835-1dce-47fd-9a5d-c815d007bfda_nube-b7e655ab33002f3f7616018314083548-480-0.webp'
 
@@ -44,11 +44,11 @@ class database{
     text: 'Par de lentes - PREMIUN - com grau',
     valor: 'R\$ 399,90',
     parcelamento: '3x sem juros',
-    avaliacao:  '4.2',
+    avaliacao:  4.2,
     urlImage:
       'https://acdn-us.mitiendanube.com/stores/925/127/products/hd0a267ad7a71463ea9b0d38548d4c5eeq21-5af749c14ec2351aa516824526844931-1024-1024.png'
 
 
 
-  ];
+  )];
 }
