@@ -5,7 +5,7 @@ import 'package:path/path.dart';
 class DBHelper{
 
   Future<Database> initDB() async {
-   String path=  await getDatabasesPath();
+   String path=  await getDatabasesPath
    String dbName= 'airbnb.db';
 
    String dbPath = join(path, dbName);

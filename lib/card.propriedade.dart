@@ -59,7 +59,7 @@ class _CardPropriedadeState extends State<CardPropriedade> {
                     width: 100,
                     child: Column(
                       children: [
-                        Text(propriedade.valor, style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text(propriedade.valor, style: TextStyle(fontWeight: FontWeight.bold))
                         Container(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
