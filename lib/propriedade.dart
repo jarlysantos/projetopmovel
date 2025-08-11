@@ -10,7 +10,7 @@ class Propriedade{
     required this.text,
     required this.valor,
     required this.parcelamento,
-    required this.avaliacao
+    required this.avaliacao,
 });
 
 

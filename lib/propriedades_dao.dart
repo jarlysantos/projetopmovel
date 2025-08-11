@@ -5,7 +5,7 @@ class PropriedadesDao {
     List<PropriedadesDao> listaPropriedades = [];
     Database db = await DBHelper().initDB();
 
-    String sql = 'SELECT * FROM PROPRIEDADE;'
+    String sql = 'SELECT * FROM PROPRIEDADE;';
     var listResult = await db.rawQuery(sql);
 
     for (var json in listResult) {

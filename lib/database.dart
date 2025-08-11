@@ -15,7 +15,7 @@ class database{
     Propriedade(
     text: 'Par de lente - fotossensível + antirreflexo com grau',
     valor: 'R\$ 400,00',
-    parcelamento: '2x sem juros'
+    parcelamento: '2x sem juros',
     avaliacao:  5.5,
     urlImage:
        'https://acdn-us.mitiendanube.com/stores/001/118/587/products/f2e6dfdd-55f1-46e6-98e5-3fe4fc56568241-0ea647ad9d2a0bdf8e15900976899393-1024-1024.jpg',

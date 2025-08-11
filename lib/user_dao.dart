@@ -1,1 +1,1 @@
-import 'package:projarly';
+import 'package:projarly2/';
