@@ -1,4 +1,4 @@
-import 'package:projarly2/propriedades.dart';
+import 'package:projarly2/domain/propriedades.dart';
 
 class database{
   static List propriedades = [

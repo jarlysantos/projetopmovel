@@ -1,4 +1,4 @@
-import 'package:projarly2/propriedades.dart';
+import 'package:projarly2/domain/propriedades.dart';
 import 'package:flutter/material.dart';
 
 
@@ -85,7 +85,7 @@ class cardPropriedade {
   }
 
   Widget buildItem({
-    required Propriedade proprieade;
+    required Propriedade proprieade,
   }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

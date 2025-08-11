@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
-import 'db/db_helper.dart';
-import 'domain/propriedades.dart';
+import '../domain/propriedades.dart';
+import 'db_helper.dart';
 
 
 class Propiedades_dao{
