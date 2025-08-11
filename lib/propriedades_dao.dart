@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:sqflite/sqlite_api.dart';
 
 class PropriedadesDao {
@@ -28,5 +29,13 @@ class PropriedadesDao {
 }
 
 class propriedade {
+=======
+class PropriedadesDao {
+
+  listarPropriedades() async{
+   DataBase db= await DBHelper().initDB();
+
+  }
+>>>>>>> 57b8c092ccedd6306b635507d12dae76418f1665
 
 }
