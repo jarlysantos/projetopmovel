@@ -14,6 +14,8 @@ class DBHelper {
     return db;
   }
 
+
+
   Future<void> onCreate(Database db, int version) async {
     String sql = '''CREATE TABLE Propriedade (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
