@@ -1,3 +1,5 @@
+//representa a tabela de banco de dados
+
 class User{
 
   late String username;

@@ -1,4 +1,5 @@
-import 'package:projarly2/propriedades_dao.dart';
+//essa vai dar mais funções para o banco de dados
+
 import 'package:sqflite/sqflite.dart';
 import '../domain/user.dart';
 import 'db_helper.dart' show DBHelper;

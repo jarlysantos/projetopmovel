@@ -1,0 +1,2 @@
+C:/Users/Aluno/StudioProjects/projetopmovel-sasa/android/app/.cxx/Debug/3m3h4t4l/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/Aluno/StudioProjects/projetopmovel-sasa/android/app/.cxx/Debug/3m3h4t4l/armeabi-v7a/CMakeFiles/rebuild_cache.dir

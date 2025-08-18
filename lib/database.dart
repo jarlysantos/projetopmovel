@@ -1,3 +1,5 @@
+//armazenar os dados temporariamente
+
 import 'package:projarly2/domain/propriedades.dart';
 
 class database{
