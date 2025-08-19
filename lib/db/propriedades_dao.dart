@@ -1,16 +1,19 @@
-<<<<<<< HEAD
+import '../db/db_helper.dart';
 import 'package:sqflite/sqlite_api.dart';
+import '../domain/propriedade.dart';
+
+import 'db_helper.dart';
 
 class PropriedadesDao {
-  Future<List<propriedade>> listarPropriedades() async {
-    List<PropriedadesDao> listaPropriedades = [];
+  Future<List<Propriedade>> listarPropriedades() async {
+    List<Propriedade> listaPropriedades = [];
     Database db = await DBHelper().initDB();
 
     String sql = 'SELECT * FROM PROPRIEDADE;';
     var listResult = await db.rawQuery(sql);
 
     for (var json in listResult) {
-      Propriedades propriedade = Propriedade.fromJson(json);
+      Propriedade propriedade = Propriedade.fromJson(json);
       listaPropriedades.add(propriedade);
     }
 
@@ -28,14 +31,3 @@ class PropriedadesDao {
   }
 }
 
-class propriedade {
-=======
-class PropriedadesDao {
-
-  listarPropriedades() async{
-   DataBase db= await DBHelper().initDB();
-
-  }
->>>>>>> 57b8c092ccedd6306b635507d12dae76418f1665
-
-}
