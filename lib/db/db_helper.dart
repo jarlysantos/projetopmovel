@@ -5,7 +5,7 @@ import 'package:sqflite/sqflite.dart';
 class DBHelper {
   Future<Database> initDB() async {
     String path = await getDatabasesPath();
-    String dbName = 'otica.db';
+    String dbName = 'oculos.db';
 
     String dbPath = join(path, dbName);
     print(dbPath);
