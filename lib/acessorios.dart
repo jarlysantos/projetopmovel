@@ -83,17 +83,13 @@ class _AcessoriosState extends State<Acessorios> {
                 children: [
                   Text(a.valor),
                   Text(a.parcelamento)
-
                 ],
               ),
             ),
           ],
         )
     );
-
-
   }
-
   }
 
 
