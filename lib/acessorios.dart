@@ -53,23 +53,17 @@ class _AcessoriosState extends State<Acessorios> {
   buildBody(){
     return Padding(
       padding: EdgeInsets.all(16),
-      child: ListView(
-        children: [
-
-          ListView.builder(
+      child: ListView.builder(
             shrinkWrap: true,
             itemCount: listaAcessorios.length,
             itemBuilder: (context, i) {
               return buildAcessorio(listaAcessorios[i]);
             }
           )
-
-        ],
-      ),
     );
   }
   buildAcessorio(Acessorio a){
-    return           Container(
+    return  Container(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -99,8 +93,6 @@ class _AcessoriosState extends State<Acessorios> {
 
 
   }
-
- 
 
   }
 
