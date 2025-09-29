@@ -34,9 +34,6 @@ class _CardPropriedadeState extends State<CardPropriedade>{
   }
   }
 
-class cardPropriedade {
-}
-
   Widget buildBody() {
     return Padding(
       padding: const EdgeInsets.all(16),

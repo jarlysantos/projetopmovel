@@ -4,7 +4,7 @@ import 'package:sqflite/sqflite.dart';
 import '../domain/user.dart';
 import 'db_helper.dart' show DBHelper;
 
-class USerDao{
+class UserDao{
   Future<bool> autenticacao(String username, String password) async {
     Database db = await DBHelper().initDB();
 
