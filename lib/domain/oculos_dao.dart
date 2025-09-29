@@ -15,7 +15,10 @@ class OculosDao {
       listaOculos.add(oculos);
     }
 
+    await Future.delayed(Duration(seconds: 3));
+
     return listaOculos;
+
   }
 
   salvar(Oculos oculo) async {

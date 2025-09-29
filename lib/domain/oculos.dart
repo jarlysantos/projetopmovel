@@ -12,9 +12,6 @@ class Oculos {
     required this.cor,
   });
 
-
-
-
   Oculos.fromJson(Map<String, dynamic> json) {
     nome = json['nomeArmacao'];
     cor = json['cor'];
