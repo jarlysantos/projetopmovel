@@ -1,4 +1,3 @@
-//essa classe vai oferecer funções para pegar os dados do banco de dados da outra classe
 
 import 'package:sqflite/sqflite.dart';
 import '../domain/propriedades.dart';

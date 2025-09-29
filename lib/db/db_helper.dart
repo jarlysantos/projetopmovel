@@ -1,4 +1,3 @@
-//essa classe vai criar o banco de dados
 
 import 'dart:async';
 import 'package:sqflite/sqflite.dart';

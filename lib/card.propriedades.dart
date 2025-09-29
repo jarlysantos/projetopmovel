@@ -95,6 +95,7 @@ class _CardPropriedadeState extends State<CardPropriedade>{
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+
             Text(
               proprieade.modelo,
               style: const TextStyle(

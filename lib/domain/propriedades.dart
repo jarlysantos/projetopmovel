@@ -1,4 +1,3 @@
-//vai representar a tabela do banco de dados, informações
 
 class Propriedade{
 
