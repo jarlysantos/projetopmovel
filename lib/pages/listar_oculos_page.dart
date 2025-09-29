@@ -4,15 +4,19 @@ import 'package:projarly2/domain/oculos_dao.dart';
 import 'package:projarly2/widgets/oculos_widget.dart';
 import 'package:projarly2/widgets/textFormField_widget.dart';
 
+
 class ExplorePage extends StatefulWidget {
   const ExplorePage({super.key});
+
 
   @override
   State<ExplorePage> createState() => _ExplorePageState();
 }
 
+
 class _ExplorePageState extends State<ExplorePage> {
   List<Oculos> listarOculos = [];
+
 
   @override
   void initState() {
@@ -20,10 +24,14 @@ class _ExplorePageState extends State<ExplorePage> {
     loadData();
   }
 
+
+
+
   loadData() async {
     listarOculos = await OculosDao().listarOculos();
     setState(() {});
   }
+
 
   @override
   Widget build(BuildContext context) {

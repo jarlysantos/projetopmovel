@@ -1,6 +1,6 @@
 import 'package:projarly2/db/db_helper.dart';
 import 'package:projarly2/domain/oculos.dart';
-import 'package:sqflite/sqflite.dart' show Database;
+import 'package:sqflite/sqflite.dart';
 
 class OculosDao {
   Future<List<Oculos>> listarOculos() async {
@@ -18,8 +18,8 @@ class OculosDao {
     return listaOculos;
   }
 
-// salvar(Oculos oculo) async {
-//   Database db = await DBHelper().initDB();
-//   db.insert('USER', user.toJson());
-// }
+  salvar(Oculos oculo) async {
+    Database db = await DBHelper().initDB();
+    db.insert('USER', oculo.toJson());
+  }
 }
