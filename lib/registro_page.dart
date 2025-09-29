@@ -19,7 +19,7 @@ class _RegisterPageState extends State<RegisterPage> {
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: 220,
-          backgroundColor: const Color(0xFFC58C6D),
+          backgroundColor: const Color(0xFF214865),
           title: Center(
             child: Image.network(
               'https://caaam.org.br/wp-content/uploads/2023/03/WhatsApp-Image-2021-05-17-at-2.55.51-PM.jpeg',
@@ -34,11 +34,11 @@ class _RegisterPageState extends State<RegisterPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Center(
-                child: Text('Cadastre um oculos',
+                child: Text('Cadastre um óculos',
                   style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w600,
-                    color: Color(0xFFC58C6D),
+                    color: Color(0xFF214865),
                   ),
                 ),
               ),
@@ -67,7 +67,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFC58C6D),
+                  backgroundColor: const Color(0xFF214865),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -104,13 +104,15 @@ class _RegisterPageState extends State<RegisterPage> {
     }
     print('Oculos Cadastro: Modelo: $modelo, Cor:$cor, Preço: $preco');
 
+
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('oculos $modelo cadastrado com sucesso!')),
     );
 
-
     modeloController.clear();
     corController.clear();
     precoController.clear();
+
+
   }
 }

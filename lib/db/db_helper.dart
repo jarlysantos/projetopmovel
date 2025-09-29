@@ -26,6 +26,16 @@ class DBHelper {
 
     await db.execute(sql);
 
+    sql = '''CREATE TABLE Oculos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    preco REAL NOT NULL,
+    modelo TEXT,
+    cor TEXT,
+    imageUrl TEXT
+    );''';
+
+    await db.execute(sql);
+
     sql =
     "INSERT INTO Propriedade (preco, modelo, cor, urlImage) VALUES (300, 'Gatinho', 'Rosa Claro','https://i.pinimg.com/736x/33/3a/15/333a15fecadc047609e0e33c9a7d8edc.jpg');";
     await db.execute(sql);
