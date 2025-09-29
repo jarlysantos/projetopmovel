@@ -84,28 +84,11 @@ class _RegisterPageState extends State<RegisterPage> {
     await UserDao().salvar(user);
 
     print('Usuario Cadastrado com sucesso!');
+
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => Login(),
-      ),
-    );
-  }
-
-  OutlineInputBorder buildPasswordOutlineInputBorder() {
-    return OutlineInputBorder(
-      borderSide: BorderSide(color: Colors.grey),
-      borderRadius: BorderRadius.vertical(
-        bottom: Radius.circular(8),
-      ),
-    );
-  }
-
-  OutlineInputBorder buildUserOutlineInputBorder() {
-    return OutlineInputBorder(
-      borderSide: BorderSide(color: Colors.grey),
-      borderRadius: BorderRadius.vertical(
-        top: Radius.circular(8),
       ),
     );
   }

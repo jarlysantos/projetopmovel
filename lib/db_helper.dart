@@ -5,7 +5,7 @@ import 'package:sqflite/sqflite.dart';
 class DBHelper {
   Future<Database> initDB() async {
     String path = await getDatabasesPath();
-    String dbName = 'airbnb.db';
+    String dbName = 'lola.db';
 
     String dbPath = join(path, dbName);
     print(dbPath);
