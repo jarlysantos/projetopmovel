@@ -1,7 +1,7 @@
 import 'package:projarly2/model/user.dart';
 import 'package:sqflite/sqflite.dart';
 
-import 'db_helper.dart' show DBHelper;
+import 'DBhelper.dart' show DBHelper;
 
 class UserDao {
   Future<bool> autenticacao(String username, String password) async {
@@ -12,6 +12,8 @@ class UserDao {
         'AND PASSWORD = ?;';
 
     var result = await db.rawQuery(sql, [username, password]);
+
+    // var result1 = await db.query('USER', where: 'USERNAME = ? AND PASSWORD = ?', whereArgs: [username, password]);
     print(result);
     return result.isNotEmpty;
   }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projarly2/login.dart';
 import 'package:projarly2/model/user.dart';
-import 'package:projarly2/user_dao.dart';
+import 'package:projarly2/db/userDao.dart';
+
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
