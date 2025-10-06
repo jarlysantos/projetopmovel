@@ -12,7 +12,25 @@ class Acessorios extends StatefulWidget {
 
 class _AcessoriosState extends State<Acessorios> {
 
+  String? acessorioSelecionado;
+  final TextEditingController precoController = TextEditingController();
+
+
   List listaAcessorios = [];
+
+  final List<String> acessoriosLoja = [
+    'corrente',
+    'Splay',
+    'Franela'
+  ];
+
+  final List<String> parcelamento = [
+    '1 vez',
+    '2 vezes',
+    '3 vezes'
+  ];
+  String? parcelamentoSelecionado;
+
 
   @override
   void initState() {
@@ -29,67 +47,118 @@ class _AcessoriosState extends State<Acessorios> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text('Acessórios',
-            style: TextStyle(
-              fontWeight: FontWeight.w900,
-            ),
+        appBar: buildAppbar(),
+        body: Center(
+          child: Column(
+            children: [
+              Text("Registrar Acessórios ",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30
+              ),
+              ),
+              DropdownButtonFormField<String>(
+                value: acessorioSelecionado,
+                decoration: InputDecoration(
+                  labelText: "Acessorio",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                items: acessoriosLoja.map((String acessorio) {
+                  return DropdownMenuItem<String>(
+                    value: acessorio,
+                    child: Text(acessorio),
+                  );
+                }).toList(),
+                onChanged: (String? novoValor) {
+                  setState(() {
+                    acessorioSelecionado = novoValor;
+                  });
+                },
+              ),
+              TextField(
+                controller: precoController,
+                decoration: InputDecoration(
+                  labelText: "Preço",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+              DropdownButtonFormField<String>(
+                value: parcelamentoSelecionado,
+                decoration: InputDecoration(
+                  labelText: "Parcelamento",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                items: parcelamento.map((String parcelamento) {
+                  return DropdownMenuItem<String>(
+                    value: parcelamento,
+                    child: Text(parcelamento),
+                  );
+                }).toList(),
+                onChanged: (String? novoValor) {
+                  setState(() {
+                    acessorioSelecionado = novoValor;
+                  });
+                },
+              ),
+  SizedBox(height: 10),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () async {
+                    AcessorioDao dao = AcessorioDao();
+                    Acessorio nova = Acessorio(
+                      acessorio: acessorioController.text,
+                      preço: int.tryParse(preçoController.text) ?? 0,
+                      parcelamento: parcelamento ?? "",
+                    );
+                    await dao.inserirAcessorio(nova);
+                    print(await dao.listarAcessorio());
+                    print("Acessorio salva no banco!");
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  ),
+                  child: const Text("Salvar"),
+                ),
+              ),
 
-          ),
-          backgroundColor: Colors.white,
-          elevation: 0,
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () {},
-            // Cor da seta
-          ),
-        ),
-        body: buildBody(),
+
+
+            ],
+    ),
+    ),
       ),
     );
   }
+}
+buildAppbar(){
+  return AppBar(
 
-  buildBody(){
-    return Padding(
-      padding: EdgeInsets.all(16),
-      child: ListView.builder(
-            shrinkWrap: true,
-            itemCount: listaAcessorios.length,
-            itemBuilder: (context, i) {
-              return buildAcessorio(listaAcessorios[i]);
-            }
-          )
-    );
-  }
-  buildAcessorio(Acessorio a){
-    return  Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              width: 250,
-              child: Column(
-                children: [
-                  Image.network(a.urlImage,
-                    width: 250,),
-                  Text(a.nome)
-                ],
-              ),
-            ),
-            Container(
-              width: 100,
-              child: Column(
-                children: [
-                  Text(a.valor),
-                  Text(a.parcelamento)
-                ],
-              ),
-            ),
-          ],
-        )
-    );
-  }
-  }
+  centerTitle: true,
+  title: Text('Acessórios',
+  style: TextStyle(
+  fontWeight: FontWeight.w900,
+  ),
+
+  ),
+  backgroundColor: Colors.white,
+  elevation: 0,
+  leading: IconButton(
+  icon: Icon(Icons.arrow_back, color: Colors.black),
+  onPressed: () {},
+  ),
+  );
+}
+
 
 
