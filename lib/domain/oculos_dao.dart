@@ -21,8 +21,5 @@ class OculosDao {
 
   }
 
-  salvar(Oculos oculo) async {
-    Database db = await DBHelper().initDB();
-    db.insert('USER', oculo.toJson());
-  }
+
 }
