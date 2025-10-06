@@ -18,7 +18,6 @@ class AcessorioDao {
       Acessorio acessorio = Acessorio.fromJson(json);
       listaAcessorios.add(acessorio);
     }
-
     return listaAcessorios;
   }
 }
