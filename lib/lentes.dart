@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projarly2/domain/propriedade.dart';
 
-import 'db/propriedades_dao.dart';
+import 'db/propriedades_Api.dart';
 
 class Lentes extends StatefulWidget {
   const Lentes({super.key});
@@ -20,7 +20,7 @@ class _LentesState extends State<Lentes> {
   }
 
   loadData() async {
-    listaPropriedades = await PropriedadesDao().listarPropriedades();
+    listaPropriedades = await PropriedadesApi().listarApi();
     setState(() {});
   }
   @override
