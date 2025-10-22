@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:projarly2/register_page.dart';
 import 'package:projarly2/telaInicial.dart';
 import 'package:projarly2/db/userDao.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'db/prefs.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -11,14 +15,15 @@ class Login extends StatefulWidget {
 
 class _loginState extends State<Login> {
 
-
   TextEditingController usuarioController = TextEditingController();
   TextEditingController senhaController = TextEditingController();
 
-
-
-
   @override
+
+  void initState() {
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -94,14 +99,23 @@ class _loginState extends State<Login> {
 
     if (auth) {
       print("Usuário autenticado com sucesso!");
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) {
-            return TelaInicial();
-          },
-        ),
-      );
+      checkUserLogin() async {
+        bool status = await SharedPrefs().getUserStatus();
+        await Future.delayed(Duration(seconds: 3));
+        if (status) {
+          Navigator.pushReplacement(context, MaterialPageRoute(
+            builder: (context) {
+              return TelaInicial();
+            },
+          ));
+        } else {
+          Navigator.pushReplacement(context, MaterialPageRoute(
+            builder: (context) {
+              return RegisterPage();
+            },
+          ));
+        }
+      }
     } else {
       print('Usuario e/ou senha incorretos!');
     }
