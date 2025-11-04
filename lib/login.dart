@@ -3,7 +3,6 @@ import 'package:projarly2/register_page.dart';
 import 'package:projarly2/telaInicial.dart';
 import 'package:projarly2/db/userDao.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'db/prefs.dart';
 
 class Login extends StatefulWidget {
@@ -22,7 +21,9 @@ class _loginState extends State<Login> {
 
   void initState() {
     super.initState();
+    checkUserLogin();
   }
+
 
   Widget build(BuildContext context) {
     return SafeArea(
@@ -91,33 +92,40 @@ class _loginState extends State<Login> {
     );
   }
 
+
   Future<void> xxxxxx() async {
     String user = usuarioController.text;
     String password = senhaController.text;
 
+
     bool auth = await UserDao().autenticacao(user, password);
+
 
     if (auth) {
       print("Usuário autenticado com sucesso!");
-      checkUserLogin() async {
-        bool status = await SharedPrefs().getUserStatus();
-        await Future.delayed(Duration(seconds: 3));
-        if (status) {
-          Navigator.pushReplacement(context, MaterialPageRoute(
-            builder: (context) {
-              return TelaInicial();
-            },
-          ));
-        } else {
-          Navigator.pushReplacement(context, MaterialPageRoute(
-            builder: (context) {
-              return RegisterPage();
-            },
-          ));
-        }
-      }
+      await SharedPrefs().setUserStatus(true);
+      Navigator.pushReplacement(context, MaterialPageRoute(
+        builder: (context) {
+          return TelaInicial();
+        },
+      ));
+
+
     } else {
       print('Usuario e/ou senha incorretos!');
     }
   }
-}
+
+
+  checkUserLogin() async {
+    bool status = await SharedPrefs().getUserStatus();
+    await Future.delayed(Duration(seconds: 3));
+    if (status) {
+      Navigator.pushReplacement(context, MaterialPageRoute(
+        builder: (context) {
+          return TelaInicial();
+        },
+      ));
+    }
+  }
+
