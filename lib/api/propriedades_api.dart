@@ -8,9 +8,6 @@ class PropriedadesApi {
 
   Future<List<Oculos>> findAll() async {
     List<Oculos> listaOculos = [];
-    // Database db = await DBHelper().initDB();
-    // String sql = 'SELECT * FROM PROPRIEDADE;';
-    // var listResult = await db.rawQuery(sql);
 
     final response = await dio.get('$baseUrl/properties');
 
