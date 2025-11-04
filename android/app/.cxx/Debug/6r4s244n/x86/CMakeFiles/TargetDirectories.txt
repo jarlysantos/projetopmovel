@@ -1,0 +1,2 @@
+/Users/aluno2/StudioProjects/projetopmovel/android/app/.cxx/Debug/6r4s244n/x86/CMakeFiles/edit_cache.dir
+/Users/aluno2/StudioProjects/projetopmovel/android/app/.cxx/Debug/6r4s244n/x86/CMakeFiles/rebuild_cache.dir

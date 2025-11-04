@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:projarly2/lugaresPage.dart';
+import 'api/Coffee_map_page.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      home: PlacesMapPage(),
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: CoffeeMapPage(),
     ),
   );
 }
