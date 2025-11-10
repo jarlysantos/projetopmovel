@@ -7,7 +7,6 @@ class Dog {
     required this.url,
   });
 
-  // Cria um objeto Dog a partir de um JSON (Map)
   factory Dog.fromJson(Map<String, dynamic> json) {
     return Dog(
       fileSizeBytes: json['fileSizeBytes'] ?? 0,
@@ -15,7 +14,6 @@ class Dog {
     );
   }
 
-  // Converte o objeto Dog de volta para JSON
   Map<String, dynamic> toJson() {
     return {
       'fileSizeBytes': fileSizeBytes,
