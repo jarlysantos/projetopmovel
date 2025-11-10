@@ -7,18 +7,15 @@ class DogPage extends StatefulWidget {
   @override
   _DogPageState createState() => _DogPageState();
 }
-//informacoes da api e ta carregando os dados
 class _DogPageState extends State<DogPage> {
   final api = DogApi();
   Dog? dog;
   bool loading = true;
-//busca o cachorro assim que a tela abre
   @override
   void initState() {
     super.initState();
     loadDog();
   }
-//busca o cachorro na api atualiza a tela e mostra a imagen
   Future<void> loadDog() async {
     var newDog = await api.getRandomDog();
     setState(() {
@@ -37,7 +34,7 @@ class _DogPageState extends State<DogPage> {
             : dog == null
             ? Text('Erro ao carregar cachorro')
             : Image.network(dog!.url),
-      ),//botao pra carregar outro cachorro
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: loadDog,
         child: Icon(Icons.refresh),
