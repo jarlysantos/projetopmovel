@@ -36,7 +36,7 @@ class _CoffeeMapPageState extends State<CoffeeMapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('☕ Café Aleatório')),
+      appBar: AppBar(title: const Text(' Café Aleatório')),
       body: Center(
         child: isLoading
             ? const CircularProgressIndicator()
@@ -53,7 +53,7 @@ class _CoffeeMapPageState extends State<CoffeeMapPage> {
                 setState(() {
                 });
               },
-              child: const Text('Gerar outro café'),
+              child: const Text('Gerar outro café '),
             ),
           ],
         )
