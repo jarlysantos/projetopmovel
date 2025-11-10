@@ -1,12 +1,11 @@
 import 'package:dio/dio.dart';
-import 'cat_fact.dart';
 
 class CatFactApi {
   final dio = Dio();
   String baseUrl = 'https://meowfacts.herokuapp.com';
 
   Future<CatFact> getCatFact() async {
-    var result = await dio.get('$baseUrl/?id=3');
+    var result = await dio.get(baseUrl);
 
     if (result.statusCode == 200) {
       var json = result.data;
@@ -18,7 +17,6 @@ class CatFactApi {
   }
 }
 
-/
 class CatFact {
   final List<dynamic> data;
 
@@ -28,4 +26,3 @@ class CatFact {
     return CatFact(data: json['data']);
   }
 }
-
