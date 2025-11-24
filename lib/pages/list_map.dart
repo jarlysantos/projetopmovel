@@ -14,6 +14,7 @@ class ListaOculos extends StatefulWidget {
 class _ListaOculosState extends State<ListaOculos> {
   List<Oculos> _oculos = [];
   bool _carregando = true;
+  late Oculos user = context.watch<ProfileProvider>().oculos;
 
   @override
   void initState() {
@@ -24,7 +25,7 @@ class _ListaOculosState extends State<ListaOculos> {
   Future<void> _carregarOculos() async {
     final dao = OculosDao();
     final lista = await dao.listarOculos();
-     setState(() {
+    setState(() {
       _oculos = lista;
       _carregando = false;
     });
