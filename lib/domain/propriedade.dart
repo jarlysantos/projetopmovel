@@ -1,4 +1,6 @@
-class Propriedade{
+import 'dart:ffi';
+
+class Propriedade {
   String urlImage;
   String nome;
   double valor;
@@ -14,12 +16,20 @@ class Propriedade{
   });
 
   factory Propriedade.fromJson(Map<String, dynamic> json) {
+    double avaDouble = json['avaliacao'] is int
+        ? json['avaliacao'].toDouble()
+        : json['avaliacao'];
+
+    double valDouble = json['valor'] is int
+        ? json['valor'].toDouble()
+        : json['valor'];
+
     return Propriedade(
       urlImage: json['urlImage'] ?? '',
       nome: json['nome'] ?? '',
-      valor: json['valor'] ?? 0.0,
+      valor: valDouble,
       parcelamento: json['parcelamento'] ?? '',
-      avaliacao: json['avaliacao'] ?? 0.0 ,
+      avaliacao: avaDouble,
     );
   }
 
@@ -33,5 +43,4 @@ class Propriedade{
       'avaliacao': avaliacao,
     };
   }
-
 }

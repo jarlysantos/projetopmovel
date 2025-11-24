@@ -1,12 +1,26 @@
+import 'lentes.dart';
 import 'package:flutter/material.dart';
 import 'package:projarly2/api/page/google.dart';
 import 'api/Coffee_map_page.dart';
+import 'package:flutter/material.dart';
+import 'package:projarly2/db/db_helper.dart';
 
-void main() {
-  runApp(
-    const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MapSample(),
-    ),
-  );
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await DBHelper().initDB();
+
+  runApp(const MyApp());
 }
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Lentes(),
+    );
+  }
+}
+

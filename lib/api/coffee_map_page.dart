@@ -65,3 +65,4 @@ class _CoffeeMapPageState extends State<CoffeeMapPage> {
     );
   }
 }
+

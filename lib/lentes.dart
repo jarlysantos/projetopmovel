@@ -20,7 +20,7 @@ class _LentesState extends State<Lentes> {
   }
 
   loadData() async {
-    listaPropriedades = await PropriedadesApi().listarApi();
+    listaPropriedades = await PropriedadesApi().findAll();
     setState(() {});
   }
   @override
