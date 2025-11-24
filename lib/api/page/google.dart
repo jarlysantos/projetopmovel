@@ -35,7 +35,6 @@ class MapSampleState extends State<MapSample> {
 
       body: GoogleMap(
 
-
         mapType: MapType.hybrid,
         initialCameraPosition: _kGooglePlex,
         onMapCreated: (GoogleMapController controller) {

@@ -53,7 +53,6 @@ class _CoffeeMapPageState extends State<CoffeeMapPage> {
                 setState(() {
                 });
               },
-
               child: const Text('Gerar outro café '),
             ),
 

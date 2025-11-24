@@ -10,7 +10,6 @@ class CoffeeService {
       final result = await _dio.get(baseUrl);
 
 
-
       if (result.statusCode == 200) {
 
         return '$baseUrl?t=${DateTime.now().millisecondsSinceEpoch}';
