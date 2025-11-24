@@ -4,6 +4,11 @@ import 'package:projarly2/telaInicial.dart';
 import 'package:projarly2/db/userDao.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'db/prefs.dart';
+import 'package:provider/provider.dart';
+import 'package:projarly2/provider/profile_provider.dart';
+import 'package:projarly2/model/user.dart';
+import 'package:projarly2/api/user_api.dart';
+import 'package:projarly2/db/shared_prefs.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -97,25 +102,28 @@ class _loginState extends State<Login> {
     String user = usuarioController.text;
     String password = senhaController.text;
 
+    User? usuario = await UserApi().login(user, password);
+    if (usuario != null) {
 
-    bool auth = await UserDao().autenticacao(user, password);
 
+      SharedPrefs().setUserId(usuario.id);
 
-    if (auth) {
+      ProfileProvider provider = context.read<ProfileProvider>();
+      provider.setUser(usuario);
+
       print("Usuário autenticado com sucesso!");
       await SharedPrefs().setUserStatus(true);
       Navigator.pushReplacement(context, MaterialPageRoute(
         builder: (context) {
           return TelaInicial();
         },
-      ));
-
+      ),
+      );
 
     } else {
       print('Usuario e/ou senha incorretos!');
     }
   }
-
 
   checkUserLogin() async {
     bool status = await SharedPrefs().getUserStatus();
@@ -126,6 +134,36 @@ class _loginState extends State<Login> {
           return TelaInicial();
         },
       ));
+
+      OutlineInputBorder buildPasswordOutlineInputBorder() {
+        return OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey),
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(8),
+          ),
+        );
+      }
+
+      OutlineInputBorder buildUserOutlineInputBorder() {
+        return OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey),
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(8),
+          ),
+        );
+      }
+
+      void onPressedRegisterPage() {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return RegisterPage();
+            },
+          ),
+        );
+      }
+    }
     }
   }
 

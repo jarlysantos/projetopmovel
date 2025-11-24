@@ -1,6 +1,5 @@
-import 'package:projarly2/model/Address.dart';
 import 'package:dio/dio.dart';
-
+/*
 class AddressApi {
   final dio = Dio();
   String baseUrl = 'https://baconmockup.com/300/500/';
@@ -14,5 +13,5 @@ class AddressApi {
     return address;
     //}
   }
-}
+}*/
 

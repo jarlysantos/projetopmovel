@@ -7,7 +7,7 @@ import 'package:projarly2/register_page.dart';
 void main() {
   runApp(
     MaterialApp(
-      home: RegisterPage(),
+      home: Login(),
     ),
   );
 }
