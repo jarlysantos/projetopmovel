@@ -8,7 +8,7 @@ class PropriedadesApi {
 
     List<Propriedade> listaPropriedades = [];
 
-    final response = await dio.get('$baseUrl/Lentes');
+    final response = await dio.get('$baseUrl/properties');
     print(response);
 
     if (response.statusCode == 200) {
@@ -22,7 +22,6 @@ class PropriedadesApi {
     }
     return listaPropriedades;
   }
-
 
 
 
