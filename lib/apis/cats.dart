@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:aula_923/api/CatFactApi.dart'; // importe o caminho certo da sua classe
+
+import 'cat_fact.dart';
 
 class CatsMapPage extends StatefulWidget {
   const CatsMapPage({super.key});
@@ -17,7 +18,7 @@ class _CatsMapPageState extends State<CatsMapPage> {
     setState(() => isLoading = true);
     try {
       final fact = await _catFactApi.getCatFact();
-      setState(() => catFact = fact.data[0]);
+      setState(() => catFact = fact.data);
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Erro ao carregar fato do gato: $e')),
