@@ -1,4 +1,3 @@
-import 'package:projarly2/acessorios.dart';
 import 'package:projarly2/domain/acessorio.dart';
 
 import '../db/db_helper.dart';
