@@ -19,16 +19,6 @@ class _ListaOculosState extends State<ListaOculos> {
   @override
   void initState() {
     super.initState();
-    _carregarOculos();
-  }
-
-  Future<void> _carregarOculos() async {
-    final dao = OculosDao();
-    final lista = await dao.listarOculos();
-    setState(() {
-      _oculos = lista;
-      _carregando = false;
-    });
   }
 
   @override
@@ -47,26 +37,7 @@ class _ListaOculosState extends State<ListaOculos> {
         itemBuilder: (context, index) {
           final o = _oculos[index];
           return InkWell(
-            onTap: (){
 
-              ProfileProvider provider = context.read<ProfileProvider>();
-              provider.setOculos(o);
-
-            },
-            child: Card(
-              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: ListTile(
-                leading: Image.network(
-                  o.url,
-                  width: 60,
-                  height: 60,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) => const Icon(Icons.image),
-                ),
-                title: Text(o.nome),
-                subtitle: Text('${o.cor} - R\$ ${o.preco.toStringAsFixed(2)}'),
-              ),
-            ),
           );
         },
       ),

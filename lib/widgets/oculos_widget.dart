@@ -17,6 +17,7 @@ class _OculosWidgetState extends State<OculosWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
+
       width: MediaQuery.of(context).size.width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
