@@ -1,8 +1,6 @@
 import 'lentes.dart';
 import 'package:flutter/material.dart';
 import 'package:projarly2/api/page/google.dart';
-import 'api/Coffee_map_page.dart';
-import 'package:flutter/material.dart';
 import 'package:projarly2/db/db_helper.dart';
 
 void main() async {

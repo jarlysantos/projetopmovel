@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -22,17 +21,27 @@ class MapSampleState extends State<MapSample> {
 
   static const CameraPosition _kLake = CameraPosition(
     bearing: 192.8334901395799,
-    target: LatLng(37.43296265331129, -122.08832357078792),
-    tilt: 59.440717697143555,
+    target: LatLng(-9.754317865055048, -36.65892927313053),
     zoom: 19.151926040649414,
   );
-
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'Ótica parceira',
+          style: TextStyle(fontWeight: FontWeight.w500, color:Colors.white),
+        ),
+        backgroundColor: const Color(0xFF00695C)
+        ,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {},
+        ),
+      ),
       body: GoogleMap(
 
         mapType: MapType.hybrid,
@@ -43,7 +52,7 @@ class MapSampleState extends State<MapSample> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _goToTheLake,
-        label: const Text('To the lake!'),
+        label: const Text('Ir para a ótica'),
         icon: const Icon(Icons.directions_boat),
       ),
     );
