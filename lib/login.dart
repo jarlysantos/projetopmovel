@@ -9,7 +9,7 @@ import 'package:projarly2/provider/profile_provider.dart';
 import 'package:projarly2/model/user.dart';
 import 'package:projarly2/api/user_api.dart';
 import 'package:projarly2/db/shared_prefs.dart';
-
+import 'package:projarly2/profile_page.dart';
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -26,7 +26,7 @@ class _loginState extends State<Login> {
 
   void initState() {
     super.initState();
-    checkUserLogin();
+    // checkUserLogin();
   }
 
 
@@ -104,8 +104,6 @@ class _loginState extends State<Login> {
 
     User? usuario = await UserApi().login(user, password);
     if (usuario != null) {
-
-
       SharedPrefs().setUserId(usuario.id);
 
       ProfileProvider provider = context.read<ProfileProvider>();
@@ -115,7 +113,7 @@ class _loginState extends State<Login> {
       await SharedPrefs().setUserStatus(true);
       Navigator.pushReplacement(context, MaterialPageRoute(
         builder: (context) {
-          return TelaInicial();
+          return const ProfilePage();
         },
       ),
       );
@@ -131,7 +129,7 @@ class _loginState extends State<Login> {
     if (status) {
       Navigator.pushReplacement(context, MaterialPageRoute(
         builder: (context) {
-          return TelaInicial();
+          return const ProfilePage();
         },
       ));
 

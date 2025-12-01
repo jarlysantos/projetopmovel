@@ -10,9 +10,9 @@ class User {
   User.fromJson(Map<String, dynamic> json) {
     username = json['username'];
     password = json['password'];
-    id = json['id'];
-    name = json['name'];
-    imageUrl = json['imageUrl'];
+    id = json['id'] ?? 0;
+    name = json['name'] ?? '';
+    imageUrl = json['imageUrl'] ?? '';
   }
 
   Map<String, dynamic> toJson() {
