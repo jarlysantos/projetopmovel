@@ -6,7 +6,7 @@ import 'package:projarly2/registro_page.dart';
 void main() {
   runApp(
     MaterialApp(
-      home: MapInfantil(),
+      home: Infantil(),
     ),
   );
 }

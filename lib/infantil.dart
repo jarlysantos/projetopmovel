@@ -1,99 +1,124 @@
-import 'dart:async';
-import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:http/http.dart' as http;
+import 'package:projarly2/page/map_infantil.dart';
 
-class MapInfantil extends StatefulWidget {
-  const MapInfantil({super.key});
+
+class Infantil extends StatefulWidget {
+  const Infantil({super.key});
 
   @override
-  State<MapInfantil> createState() => MapInfantilState();
+  State<Infantil> createState() => _InfantilState();
 }
 
-class MapInfantilState extends State<MapInfantil> {
-  final Completer<GoogleMapController> _controller = Completer();
-
-  static const CameraPosition posInicial = CameraPosition(
-    target: LatLng(-23.5505, -46.6333),
-    zoom: 14.5,
-  );
-
-  final Set<Marker> markers = {};
-
-  @override
-  void initState() {
-    super.initState();
-    buscar();
-  }
-
-  Future<void> buscar() async {
-    const apiKey = 'SUA_API_KEY';
-
-    final url =
-        'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
-        '?location=${posInicial.target.latitude},${posInicial.target.longitude}'
-        '&radius=4000'
-        '&keyword=óculos infantis'
-        '&key=$apiKey';
-
-    final r = await http.get(Uri.parse(url));
-    final data = json.decode(r.body);
-
-    if (data['results'] != null) {
-      for (var l in data['results']) {
-        final pos = LatLng(
-          l['geometry']['location']['lat'],
-          l['geometry']['location']['lng'],
-        );
-
-        markers.add(
-          Marker(
-            markerId: MarkerId(l['place_id']),
-            position: pos,
-            infoWindow: InfoWindow(
-              title: l['name'],
-              snippet: l['vicinity'],
-            ),
-          ),
-        );
-      }
-      setState(() {});
-    }
-  }
-
+class _InfantilState extends State<Infantil> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GoogleMap(
-        mapType: MapType.hybrid,
-        initialCameraPosition: posInicial,
-        markers: markers,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _irParaLojaMaisProxima,
-        label: const Text('Loja mais próxima'),
-        icon: const Icon(Icons.store),
-      ),
-    );
-  }
-
-  Future<void> _irParaLojaMaisProxima() async {
-    if (markers.isEmpty) return;
-
-    final primeiro = markers.first.position;
-    final GoogleMapController controller = await _controller.future;
-
-    await controller.animateCamera(
-      CameraUpdate.newCameraPosition(
-        CameraPosition(
-          target: primeiro,
-          zoom: 17,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text(
+            'ÓCULOS INFANTIL',
+            style: TextStyle(
+              fontWeight: FontWeight.w900,
+            ),
+          ),
+          backgroundColor: const Color(0xFFC58C6D),
+        ),
+        body: buildBody(),
+        bottomNavigationBar: BottomAppBar(
+          color: const Color(0xFFC58C6D),
+          shape: const CircularNotchedRectangle(),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+            IconButton(
+              icon: const Icon(Icons.map, color: Colors.white),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => MapSample()));
+              },
+            )
+            ],
+          ),
         ),
       ),
     );
   }
+
+  Widget buildBody() {
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: ListView(
+        children: [
+          buildItem(
+            imageUrl: 'https://i.pinimg.com/736x/33/3a/15/333a15fecadc047609e0e33c9a7d8edc.jpg',
+            modelo: 'Gatinho',
+            cor: 'Rosa Claro',
+            preco: 'RS 300',
+          ),
+          const SizedBox(height: 20),
+          buildItem(
+            imageUrl: 'https://i.pinimg.com/736x/1a/f2/d6/1af2d6c2825354f6770ba249ba2bcdcb.jpg',
+            modelo: 'Arco-íris',
+            cor: 'Rosa Claro',
+            preco: 'RS 350',
+          ),
+          const SizedBox(height: 20),
+          buildItem(
+            imageUrl: 'https://i.pinimg.com/736x/78/7e/7a/787e7a2b8dd5219ab507dc141145b5b7.jpg',
+            modelo: 'Florzinha',
+            cor: 'Marrom Claro',
+            preco: 'RS 295',
+          ),
+          const SizedBox(height: 20),
+          buildItem(
+            imageUrl: 'https://i.pinimg.com/736x/8d/91/ab/8d91ab939d607e226464272225d71a82.jpg',
+            modelo: 'Laço',
+            cor: 'Rosa Claro',
+            preco: 'RS 400',
+          ),
+          const SizedBox(height: 20),
+        ],
+      ),
+    );
+  }
+
+  Widget buildItem({
+    required String imageUrl,
+    required String modelo,
+    required String cor,
+    required String preco,
+  }) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.network(imageUrl),
+        ),
+        const SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              modelo,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              cor,
+              style: const TextStyle(fontSize: 17),
+            ),
+            Text(
+              preco,
+              style: const TextStyle(fontSize: 17),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
 }
+
