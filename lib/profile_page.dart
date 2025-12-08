@@ -45,7 +45,6 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               child: Column(
                 children: [
-                  // ✨ Avatar simples
                   CircleAvatar(
                     radius: 65,
                     backgroundColor: Colors.grey[300],

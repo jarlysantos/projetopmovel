@@ -26,7 +26,7 @@ class _loginState extends State<Login> {
 
   void initState() {
     super.initState();
-    // checkUserLogin();
+    checkUserLogin();
   }
 
 
@@ -125,8 +125,13 @@ class _loginState extends State<Login> {
 
   checkUserLogin() async {
     bool status = await SharedPrefs().getUserStatus();
+    int id = await SharedPrefs().getUserId();
+    User? usuario = await UserApi().findById(id);
+
     await Future.delayed(Duration(seconds: 3));
+
     if (status) {
+      context.read<ProfileProvider>().setUser(usuario);
       Navigator.pushReplacement(context, MaterialPageRoute(
         builder: (context) {
           return const ProfilePage();
