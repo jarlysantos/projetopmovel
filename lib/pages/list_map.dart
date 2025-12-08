@@ -4,16 +4,14 @@ import 'package:projarly2/domain/oculos_dao.dart';
 import 'package:projarly2/provider/profile_provider.dart';
 import 'package:provider/provider.dart';
 
-class ListaOculos extends StatefulWidget {
-  const ListaOculos({super.key});
+class FavoritoOculos extends StatefulWidget {
+  const FavoritoOculos({super.key});
 
   @override
-  State<ListaOculos> createState() => _ListaOculosState();
+  State<FavoritoOculos> createState() => _FavoritoOculosState();
 }
 
-class _ListaOculosState extends State<ListaOculos> {
-  List<Oculos> _oculos = [];
-  bool _carregando = true;
+class _FavoritoOculosState extends State<FavoritoOculos> {
   late Oculos user = context.watch<ProfileProvider>().oculos;
 
   @override
@@ -23,22 +21,59 @@ class _ListaOculosState extends State<ListaOculos> {
 
   @override
   Widget build(BuildContext context) {
+    List<Oculos> oculosList = context.read<ProfileProvider>().oculosList;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Lista de Óculos'),
         backgroundColor: Color(0xFF214865),
       ),
-      body: _carregando
-          ? const Center(child: CircularProgressIndicator())
-          : _oculos.isEmpty
-          ? const Center(child: Text('nao tem nenhum óculos cadastrado.'))
-          : ListView.builder(
-        itemCount: _oculos.length,
+      body: ListView.builder(
+        itemCount: oculosList.length,
         itemBuilder: (context, index) {
-          final o = _oculos[index];
-          return InkWell(
+          return buildCard(oculosList[index]);
+        },
+      ),
+    );
+  }
 
-          );
+  buildCard(Oculos o) {
+    return Card(
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: ListTile(
+        leading: Image.network(
+          o.url,
+          width: 60,
+          height: 60,
+          fit: BoxFit.cover,
+          errorBuilder: (context, error, stackTrace) => const Icon(Icons.image),
+        ),
+        title: Text(o.nome),
+        subtitle: Text('${o.cor} - R\$ ${o.preco.toStringAsFixed(2)}'),
+        onTap: () {
+          ProfileProvider provider = context.read<ProfileProvider>();
+          provider.setOculos(o);
+        },
+      ),
+    );
+  }
+
+  buildCard2() {
+    Oculos o = context.read<ProfileProvider>().oculos;
+    return Card(
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: ListTile(
+        leading: Image.network(
+          o.url,
+          width: 60,
+          height: 60,
+          fit: BoxFit.cover,
+          errorBuilder: (context, error, stackTrace) => const Icon(Icons.image),
+        ),
+        title: Text(o.nome),
+        subtitle: Text('${o.cor} - R\$ ${o.preco.toStringAsFixed(2)}'),
+        onTap: () {
+          ProfileProvider provider = context.read<ProfileProvider>();
+          provider.setOculos(o);
         },
       ),
     );
